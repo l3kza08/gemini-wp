@@ -10,7 +10,7 @@ app.get('/', (req, res) => res.send("Server is Online on Render!"));
 app.post('/ask', async (req, res) => {
     try {
         // แก้ไขเป็น models/gemini-1.5-flash เพื่อให้ระบบหาเจอ
-        const model = genAI.getGenerativeModel({ model: "/gemini-2.0-flash" });
+        const model = genAI.getGenerativeModel({ model: "/gemini-pro" });
         
         const result = await model.generateContent(req.body.prompt + " (ตอบเป็นภาษาไทยสั้นๆ 1 ประโยค)");
         const response = await result.response;
