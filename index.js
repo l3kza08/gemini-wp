@@ -16,7 +16,7 @@ app.get('/', (req, res) => res.send("Server is Online!"));
 app.post('/ask', async (req, res) => {
     try {
         console.log("📩 รับข้อมูลจากแอป:", req.body);
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash" });
         
         const result = await model.generateContent(req.body.prompt + " (ตอบเป็นภาษาไทยสั้นๆ 1 ประโยค)");
         const response = await result.response;
